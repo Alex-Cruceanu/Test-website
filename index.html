@@ -58,15 +58,53 @@
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="section">
-      <h1>Welcome</h1>
-      <p>Munster Association of Romanian Speakers.</p>
+  <main id="home">
+    <!-- About Us / Despre Noi -->
+    <section id="about" class="about">
+      <div class="about__inner">
+        <!-- Sliding photo show with Romanian flag frame -->
+        <div class="slideshow" data-slideshow aria-roledescription="carousel" aria-label="Photos from our community">
+          <div class="slideshow__frame">
+            <div class="slideshow__mat">
+              <div class="slideshow__viewport">
+                <div class="slideshow__track">
+                  <img class="slide" src="images/about/about-1.jpg" alt="Traditional Romanian embroidered blouses on display" loading="lazy" />
+                  <img class="slide" src="images/about/about-2.jpg" alt="Community members in traditional dress beside the Romanian, Irish and EU flags" loading="lazy" />
+                  <img class="slide" src="images/about/about-3.jpg" alt="Members singing together at a cultural event" loading="lazy" />
+                  <img class="slide" src="images/about/about-4.jpg" alt="Celebration cakes for Ziua Limbii Române (Romanian Language Day)" loading="lazy" />
+                  <img class="slide" src="images/about/about-5.jpg" alt="Families gathered at our Christmas event" loading="lazy" />
+                  <img class="slide" src="images/about/about-6.jpg" alt="Santa and helpers at the community Christmas ride" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="slideshow__btn slideshow__btn--prev" type="button" aria-label="Previous photo">&#8249;</button>
+          <button class="slideshow__btn slideshow__btn--next" type="button" aria-label="Next photo">&#8250;</button>
+          <div class="slideshow__dots" role="tablist" aria-label="Choose photo"></div>
+        </div>
+
+        <!-- Text -->
+        <div class="about__text">
+          <h2 class="about__title">
+            <a class="about__title-link" href="about.html">
+              Despre Noi
+              <span class="about__arrow" aria-hidden="true">&#8594;</span>
+            </a>
+          </h2>
+          <p class="about__lead">
+            Asociația Vorbitorilor de Limbă Română din Munster aduce împreună
+            comunitatea românească și moldovenească din sudul Irlandei.
+            Organizăm evenimente culturale, sărbători tradiționale și activități
+            pentru copii și familii, păstrând vie limba, portul și obiceiurile
+            noastre. Suntem o familie mare, unită de aceleași rădăcini și de
+            dragostea pentru cultura română — departe de casă, dar mereu
+            aproape de suflet.
+          </p>
+        </div>
+      </div>
     </section>
-    <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>Content coming soon.</p>
-    </section>
+
     <section id="past-events" class="section">
       <h2>Past Events</h2>
       <p>Content coming soon.</p>
