@@ -283,3 +283,264 @@ a {
   font-family: "Poppins", sans-serif;
   margin-bottom: 0.5rem;
 }
+
+/* =========================================================
+   About Us / Despre Noi
+   ========================================================= */
+.about {
+  /* dark blue, but a very light wash of it */
+  background-color: rgba(0, 45, 130, 0.07);
+  border-top: 1px solid rgba(0, 45, 130, 0.12);
+  border-bottom: 1px solid rgba(0, 45, 130, 0.12);
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.about__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2.25rem, 5vw, 4rem) 1.5rem;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+/* ---- Text side ---- */
+.about__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  color: var(--ro-blue);
+  margin-bottom: 0.35rem;
+}
+
+/* "Despre Noi" acts as a button that links to the About Us page */
+.about__title-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.about__title-link:hover,
+.about__title-link:focus-visible {
+  color: var(--ro-red);
+  outline: none;
+}
+
+.about__arrow {
+  display: inline-block;
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.about__title-link:hover .about__arrow,
+.about__title-link:focus-visible .about__arrow {
+  transform: translateX(6px);
+}
+
+.about__title-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* small tricolour accent under the heading */
+.about__title::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 4px;
+  margin-top: 0.7rem;
+  border-radius: 3px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ro-blue) 0 33.33%,
+    var(--ro-yellow) 33.33% 66.66%,
+    var(--ro-red) 66.66% 100%
+  );
+}
+
+.about__lead {
+  margin-top: 1.1rem;
+  font-size: 1.06rem;
+  line-height: 1.85;
+  color: #26324a;
+  max-width: 60ch;
+}
+
+/* ---- Sliding photo show ---- */
+.slideshow {
+  position: relative;
+}
+
+/* the Romanian flag frame: vertical blue | yellow | red bands */
+.slideshow__frame {
+  padding: 8px;
+  border-radius: 18px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ro-blue) 0 33.33%,
+    var(--ro-yellow) 33.33% 66.66%,
+    var(--ro-red) 66.66% 100%
+  );
+  box-shadow: 0 16px 34px rgba(6, 12, 34, 0.22);
+}
+
+/* thin white inner ring so the photo lifts off the flag */
+.slideshow__mat {
+  padding: 5px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.slideshow__viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  aspect-ratio: 3 / 2;
+  background: #0b1220;
+}
+
+.slideshow__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* prev / next controls */
+.slideshow__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(6, 11, 28, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.slideshow__btn:hover {
+  background: rgba(6, 11, 28, 0.72);
+}
+
+.slideshow__btn--prev {
+  left: 16px;
+}
+.slideshow__btn--next {
+  right: 16px;
+}
+
+/* dots */
+.slideshow__dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 1rem;
+}
+
+.slideshow__dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 45, 130, 0.28);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.slideshow__dot:hover {
+  background: rgba(0, 45, 130, 0.5);
+}
+
+.slideshow__dot.is-active {
+  background: var(--ro-red);
+  transform: scale(1.15);
+}
+
+@media (max-width: 860px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+  }
+  .about__text {
+    order: 2;
+  }
+  .slideshow {
+    order: 1;
+  }
+}
+
+/* =========================================================
+   Simple content page (e.g. Despre Noi placeholder)
+   ========================================================= */
+.page {
+  background-color: rgba(0, 45, 130, 0.07);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.page__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) 1.5rem;
+}
+
+.page__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--ro-blue);
+  margin-bottom: 0.4rem;
+}
+
+.page__title::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 4px;
+  margin-top: 0.7rem;
+  border-radius: 3px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ro-blue) 0 33.33%,
+    var(--ro-yellow) 33.33% 66.66%,
+    var(--ro-red) 66.66% 100%
+  );
+}
+
+.page__lead {
+  margin-top: 1.2rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #26324a;
+}
+
+.page__back {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-weight: 600;
+  color: var(--ro-blue);
+  transition: color 0.2s ease;
+}
+
+.page__back:hover {
+  color: var(--ro-red);
+}
+
