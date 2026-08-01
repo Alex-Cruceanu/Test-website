@@ -544,3 +544,151 @@ a {
   color: var(--ro-red);
 }
 
+/* =========================================================
+   Past Events / Evenimente Trecute
+   ========================================================= */
+.events {
+  /* dark yellow, same very light transparency as the About section */
+  background-color: rgba(184, 134, 11, 0.07);
+  border-top: 1px solid rgba(184, 134, 11, 0.16);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.16);
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.events__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2.25rem, 5vw, 4rem) 1.5rem;
+}
+
+.events__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  color: var(--ro-blue);
+  margin-bottom: 1.75rem;
+}
+
+.events__title::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 4px;
+  margin-top: 0.7rem;
+  border-radius: 3px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ro-blue) 0 33.33%,
+    var(--ro-yellow) 33.33% 66.66%,
+    var(--ro-red) 66.66% 100%
+  );
+}
+
+.events__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* rectangular box wrapped in the Romanian flag frame */
+.event-card {
+  height: 100%;
+}
+
+.event-card__frame {
+  height: 100%;
+  padding: 8px;
+  border-radius: 18px;
+  background-image: linear-gradient(
+    90deg,
+    var(--ro-blue) 0 33.33%,
+    var(--ro-yellow) 33.33% 66.66%,
+    var(--ro-red) 66.66% 100%
+  );
+  box-shadow: 0 16px 34px rgba(6, 12, 34, 0.18);
+}
+
+.event-card__mat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.event-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.event-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.event-card:hover .event-card__media img {
+  transform: scale(1.05);
+}
+
+.event-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.3rem 1.4rem 1.5rem;
+}
+
+.event-card__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ro-blue);
+}
+
+.event-card__text {
+  flex: 1;
+  color: #3a4257;
+  line-height: 1.65;
+}
+
+.event-card__btn {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1.2rem;
+  border-radius: 10px;
+  background: var(--ro-blue);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card__btn span {
+  transition: transform 0.2s ease;
+}
+
+.event-card__btn:hover,
+.event-card__btn:focus-visible {
+  background: var(--ro-red);
+  box-shadow: 0 6px 16px rgba(189, 17, 34, 0.28);
+  outline: none;
+}
+
+.event-card__btn:hover span,
+.event-card__btn:focus-visible span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 860px) {
+  .events__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
